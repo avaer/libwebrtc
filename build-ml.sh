@@ -1,0 +1,2 @@
+cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="4ccc1c4bb6fe8f1681380bb9557a7fe1847562cd" # M65
+make -j4
