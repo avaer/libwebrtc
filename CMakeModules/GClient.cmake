@@ -1,6 +1,6 @@
 file(WRITE ${WEBRTC_PARENT_DIR}/.gclient "solutions = [
   {
-    \"url\": \"https://chromium.googlesource.com/external/webrtc.git\",
+    \"url\": \"https://github.com/modulesio/webrtc.git\",
     \"managed\": False,
     \"name\": \"src\",
     \"deps_file\": \"DEPS\",

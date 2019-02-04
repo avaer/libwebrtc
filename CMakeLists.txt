@@ -76,7 +76,7 @@ ExternalProject_Add(
     webrtc-src
 
     DEPENDS ${_NEXT_DEPENDS}
-    GIT_REPOSITORY https://chromium.googlesource.com/external/webrtc
+    GIT_REPOSITORY https://github.com/modulesio/webrtc
 
     PREFIX ${CMAKE_BINARY_DIR}/webrtc
     BINARY_DIR ${CMAKE_BINARY_DIR}/webrtc/build
