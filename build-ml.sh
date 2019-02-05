@@ -1,6 +1,7 @@
 rm -Rf CMakeCache.txt CMakeFiles webrtc/{build,src,stamp,tmp}
-cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ed604f65057984d76be937130f8788d1b88094cb" -DCMAKE_BUILD_TYPE=Debug # M65
-# cmake -DTARGET_OS="linux" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ed604f65057984d76be937130f8788d1b88094cb " # M65
+cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" # M70
+# cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" -DCMAKE_BUILD_TYPE=Debug # M70
+# cmake -DTARGET_OS="linux" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" # M70
 make -j4
 pushd webrtc/src/out/Release
 tar -czf lib.tar.gz obj
