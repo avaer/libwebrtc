@@ -9,6 +9,6 @@ rem M70
 git checkout ca221eabcaed7580663e3727f092e278ac56bb68
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 set GYP_MSVS_VERSION=2017
-gn gen out/Release "--args=is_debug=false is_official_build=true symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false"
-ninja -C out/Release
+gn gen out/Release_x64 "--args=is_debug=false is_official_build=true symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false use_lld=false"
+ninja -C out/Release_x64
 popd
