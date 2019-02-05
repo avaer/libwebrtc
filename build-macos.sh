@@ -3,7 +3,8 @@ export PATH=$PATH:$(pwd)/depot_tools
 fetch --nohooks --force webrtc
 gclient sync
 pushd src
-git checkout 9f7e2a9 # M65
+# M70
+git checkout ca221eabcaed7580663e3727f092e278ac56bb68
 gn gen out/Release "--args=is_debug=false is_official_build=true symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false"
 ninja -C out/Release
 popd
