@@ -1,7 +1,7 @@
 include(LibWebRTCExecute)
 
 libwebrtc_execute(
-    COMMAND ${GIT_EXECUTABLE} describe --tags --dirty=-dirty
+  COMMAND ${GIT_EXECUTABLE} rev-parse HEAD
     OUTPUT_VARIABLE _LIBWEBRTC_TAG
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     STAMPFILE webrtc-current-tag
