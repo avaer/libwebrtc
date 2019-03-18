@@ -1,4 +1,15 @@
 rm -Rf CMakeCache.txt CMakeFiles webrtc/{build,src,stamp,tmp}
+git clone --depth=1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH="$PATH:$(pwd)/depot_tools"
+fetch --nohooks --force webrtc webrtc_android
+gclient sync
+pushd src
+git checkout 01e5d791911a1a74cb8d6d071277c9d34a977896
+gn gen out/Release_x64 '--args=is_debug=false symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false target_os="android" target_cpu="arm64"'
+ninja -C out/Release_x64
+popd
+
+
 cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" . # M70
 # cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" -DCMAKE_BUILD_TYPE=Debug # M70
 # cmake -DTARGET_OS="linux" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" # M70
