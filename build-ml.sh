@@ -1,5 +1,5 @@
 rm -Rf CMakeCache.txt CMakeFiles webrtc/{build,src,stamp,tmp}
-cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" # M70
+cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" . # M70
 # cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" -DCMAKE_BUILD_TYPE=Debug # M70
 # cmake -DTARGET_OS="linux" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" # M70
 make -j4
