@@ -4,7 +4,7 @@ export PATH="$PATH:$(pwd)/depot_tools"
 fetch --nohooks --force webrtc webrtc_android
 gclient sync
 pushd src
-git checkout 01e5d791911a1a74cb8d6d071277c9d34a977896
+git checkout 426d99e78bd2960a21dfb82d59a2aff68c3816e1
 gn gen out/Release_x64 '--args=is_debug=false symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false target_os="android" target_cpu="arm64"'
 ninja -C out/Release_x64
 popd
