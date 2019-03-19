@@ -9,6 +9,10 @@ gn gen out/Release_x64 '--args=is_debug=false symbol_level=0 rtc_build_examples=
 ninja -C out/Release_x64
 popd
 
+cp ./src/out/Release_x64/obj/libwebrtc.a .
+./gen-symbols.txt >symbols.txt
+./src/third_party/android_ndk/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-objcopy --prefix-symbols=webrtc_ libwebrtc.a
+./src/third_party/android_ndk/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-objcopy --redefine-syms=symbols.txt libwebrtc.a
 
 cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" . # M70
 # cmake -DTARGET_OS="android" -DTARGET_CPU="arm64" -DWEBRTC_REVISION="ca221eabcaed7580663e3727f092e278ac56bb68" -DCMAKE_BUILD_TYPE=Debug # M70
