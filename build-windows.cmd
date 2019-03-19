@@ -12,4 +12,5 @@ git checkout 77de4050abfbbfaaa036cc7526c078bb2c94308c
 set GYP_MSVS_VERSION=2017
 gn gen out/Release_x64 "--args=is_debug=false symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false use_lld=false"
 ninja -C out/Release_x64
+ninja -C out/Release_x64 peerconnection create_pc_factory bbr
 popd
