@@ -10,7 +10,7 @@ ninja -C out/Release_x64
 popd
 
 cp ./src/out/Release_x64/obj/libwebrtc.a .
-./gen-symbols.txt >symbols.txt
+./gen-symbols.js >symbols.txt
 ./src/third_party/android_ndk/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-objcopy --prefix-symbols=webrtc_ libwebrtc.a
 ./src/third_party/android_ndk/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin/aarch64-linux-android-objcopy --redefine-syms=symbols.txt libwebrtc.a
 
