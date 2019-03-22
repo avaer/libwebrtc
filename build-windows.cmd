@@ -8,7 +8,7 @@ git clone https://github.com/modulesio/webrtc.git src
 pushd src
 rem M71
 rem git checkout 0ba24191ee90c70679d2452363676c2d65b6b751
-git checkout 77de4050abfbbfaaa036cc7526c078bb2c94308c
+git checkout ce65c12e9b40596bd977c14cfb2fc6c82a10acaf
 set GYP_MSVS_VERSION=2017
 gn gen out/Release_x64 "--args=is_debug=false symbol_level=0 rtc_build_examples=false rtc_build_tools=false rtc_include_tests=false use_lld=false"
 ninja -C out/Release_x64
